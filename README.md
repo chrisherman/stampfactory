@@ -37,23 +37,6 @@ pip install -r requirements.txt
 ```
 Python will read the list and download everything required automatically.
 
-### For Developers (Updating the Requirements File)
-If you modify the code and add new libraries, you must update the `requirements.txt` file so other users can run your version. 
-
-**Method 1: The Clean Way (Recommended)**
-Use `pipreqs` to scan the code and list only the packages explicitly imported.
-```bash
-pip install pipreqs
-pipreqs /path/to/stampfactory --force
-```
-
-**Method 2: The Exact Clone Way**
-To lock exactly what is currently in your virtual environment (including sub-dependencies):
-```bash
-pip freeze > requirements.txt
-```
-
----
 
 ## Installation Guide (For Non-Programmers)
 
