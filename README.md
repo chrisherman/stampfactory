@@ -1,4 +1,4 @@
-# StampFactory (Critical Business CNC Carver)
+# StampFactory
 
 A specialized, standalone desktop application designed for rubber stamp makers, engravers, and CNC machinists. 
 
