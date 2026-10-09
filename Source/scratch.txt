@@ -1,0 +1,122 @@
+
+guide me through the process of putting this on github.
+I am using visual studio code, the venv is stored in .sfenv .
+I need to instruct people about the requirements.txt process.
+Not every stamp maker is a python or AI wizzard, so pay careful attention to the project description. 
+I rearranged the code into folders.
+
+Current project structure:
+(.sfenv) chrisherman@Yoga:~/Documents/Projects/stampfactory$ ls -lR
+.:
+total 28
+drwxrwxr-x 2 chrisherman chrisherman 4096 Oct  9 07:10 Examples
+drwxrwxr-x 2 chrisherman chrisherman 4096 Oct  3 20:16 Fonts
+drwxrwxr-x 2 chrisherman chrisherman 4096 Oct  9 07:43 ScreenShots
+drwxrwxr-x 3 chrisherman chrisherman 4096 Oct  9 07:29 Source
+drwxrwxr-x 2 chrisherman chrisherman 4096 Oct  9 07:30 Stamps
+drwxrwxr-x 2 chrisherman chrisherman 4096 Oct  8 20:10 __pycache__
+-rw-rw-r-- 1 chrisherman chrisherman  433 Oct  9 07:11 scratch.txt
+
+./Examples:
+total 608
+-rw-rw-r-- 1 chrisherman chrisherman    890 Oct  5 19:11 MAKE_IT_SO.stmp
+-rw-rw-r-- 1 chrisherman chrisherman  17606 Oct  5 19:12 MAKE_IT_SO.svg
+-rw-rw-r-- 1 chrisherman chrisherman 112311 Oct  8 08:16 MAKE_IT_SO_engrave.gcode
+-rw-rw-r-- 1 chrisherman chrisherman   2931 Oct  8 08:19 MAKE_IT_SO_outside.gcode
+-rw-rw-r-- 1 chrisherman chrisherman 264933 Oct  8 20:15 MAKE_IT_SO_pocket.gcode
+-rw-rw-r-- 1 chrisherman chrisherman  27772 Oct  8 20:13 MAKE_IT_SO_v_finish.gcode
+-rw-rw-r-- 1 chrisherman chrisherman 181588 Oct  8 20:13 MAKE_IT_SO_v_rough.gcode
+
+./Fonts:
+total 2884
+-rw-rw-r-- 1 chrisherman chrisherman 2879166 Oct  3 20:09 Audiowide,Niconne,Nunito,Warnes.zip
+-rw-rw-r-- 1 chrisherman chrisherman   18680 Oct  3 20:03 droid.zip
+-rw-rw-r-- 1 chrisherman chrisherman   53074 Oct  3 20:01 lazenby_computer.zip
+
+./ScreenShots:
+total 208
+-rw-rw-r-- 1 chrisherman chrisherman 177048 Oct  9 07:03 Flat-Carve.png
+-rw-rw-r-- 1 chrisherman chrisherman  30906 Oct  9 07:05 V-Carve.png
+
+./Source:
+total 60
+drwxrwxr-x 2 chrisherman chrisherman  4096 Oct  9 07:29 __pycache__
+-rwxrwxr-x 1 chrisherman chrisherman 23646 Oct  8 20:10 cam_module.py
+-rw-rw-r-- 1 chrisherman chrisherman     0 Oct  9 07:15 scratch.txt
+-rwxrwxr-x 1 chrisherman chrisherman 32139 Oct  9 07:27 sf.py
+
+./Source/__pycache__:
+total 36
+-rw-rw-r-- 1 chrisherman chrisherman 36500 Oct  9 07:29 cam_module.cpython-314.pyc
+
+./Stamps:
+total 4
+-rw-rw-r-- 1 chrisherman chrisherman 1001 Oct  9 07:30 MAKE_IT_SO.stmp
+
+
+(.sfenv) chrisherman@Yoga:~/Documents/Projects/stampfactory$ cat requirements.txt
+anytree==2.13.0
+asttokens==3.0.2
+bd_materials==0.2.4
+build123d==0.13.0
+cadquery-ocp-novtk==8.0.1.0.0
+cadquery-ocp-proxy==8.0.1.0.0
+certifi==2026.7.22
+charset-normalizer==3.5.2
+cloudpickle==3.1.2
+dataclasses-json==0.6.7
+Deprecated==3.0.0
+executing==2.2.1
+ezdxf==1.4.4
+fonttools==4.66.1
+idna==3.20
+ipython==9.17.1
+ipython_pygments_lexers==1.1.1
+jedi==0.20.0
+joblib==1.6.0
+lib3mf==2.5.0
+marshmallow==3.26.2
+matplotlib-inline==0.2.2
+mpmath==1.3.0
+mypy_extensions==1.1.0
+narwhals==2.26.0
+numpy==2.5.3
+ocp_gordon==0.3.1
+ocpsvg==0.7.0
+packaging==26.3
+parso==0.8.7
+pexpect==4.9.0
+pillow==12.2.0
+platformdirs==4.12.2
+prompt_toolkit==3.0.53
+psutil==7.2.2
+ptyprocess==0.7.0
+pure_eval==0.2.4
+pygltflib==1.16.5
+Pygments==2.21.0
+pyparsing==3.3.3
+PyQt6==6.11.0
+PyQt6-Qt6==6.11.2
+PyQt6_sip==13.12.0
+requests==2.34.2
+scikit-learn==1.9.1
+scipy==1.18.1
+shapely==2.1.2
+stack-data==0.6.3
+svgelements==1.9.6
+svgpathtools==1.8.0
+svgwrite==1.4.3
+sympy==1.14.0
+threadpoolctl==3.7.0
+threejs-materials==1.2.4
+traitlets==5.16.1
+trianglesolver==1.2
+typing-inspect==0.9.0
+typing_extensions==4.16.0
+urllib3==2.8.0
+wcwidth==0.9.1
+webcolors==24.8.0
+wrapt==2.5.0
+
+
+

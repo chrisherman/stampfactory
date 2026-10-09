@@ -4,6 +4,9 @@ A specialized, standalone desktop application designed for rubber stamp makers, 
 
 StampFactory takes standard text and turns it into pristine, true-to-scale CNC toolpaths (G-Code) and vector templates (SVG). It features a robust, Shapely-powered 2.5D CAM engine capable of standard flat-endmill pocketing, as well as advanced Two-Tool V-Carving to protect fragile letters and serifs from snapping during the milling process.
 
+Great for self inking hand stamps (this one can handle up to 38mmx13mm):
+<img src="ScreenShots/51b7TGmsRIL._AC_SL1000_.jpg" alt="Self Inking Stamp" width="400">
+
 ## Modes
 
 ### Flat Carve Mode
