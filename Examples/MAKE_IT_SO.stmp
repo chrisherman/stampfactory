@@ -1,0 +1,41 @@
+{
+    "text": "MAKE IT SO!",
+    "width": 38.0,
+    "height": 13.0,
+    "margin_left": 0.5,
+    "margin_right": 0.5,
+    "margin_top": 1.0,
+    "margin_bottom": 1.0,
+    "abs_x": 10.0,
+    "abs_y": 10.0,
+    "font_family": "Audiowide",
+    "font_style": "Bold",
+    "alignment": "Center",
+    "viewport_transform": [
+        13.229166666666666,
+        0.0,
+        0.0,
+        0.0,
+        -13.229166666666666,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+    ],
+    "viewport_center": [
+        28.648818897637796,
+        16.93228346456693
+    ],
+    "cam": {
+        "cam_cutter_dia": 0.5,
+        "cam_feed_rapid": 1000.0,
+        "cam_feed_cut": 500.0,
+        "cam_feed_plunge": 100.0,
+        "cam_step_depth": 0.2,
+        "cam_overstep": 0.2,
+        "cam_depth_cut": 3.0,
+        "cam_depth_engrave": 1.0,
+        "cam_prologue": "M3",
+        "cam_epilogue": "M5"
+    }
+}
