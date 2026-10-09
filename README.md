@@ -10,8 +10,10 @@ StampFactory takes standard text and turns it into pristine, true-to-scale CNC t
 Standard pocketing and profiling using a flat endmill. Great for large, blocky text.
 ![Flat Carve Mode](ScreenShots/Flat-Carve.png)
 
+
 ### V-Carve Mode (Two-Tool Setup)
 Preserves delicate text by using a flat bit to clear the background, and an angled V-bit to carve perfectly sloped, pyramidal bases around every letter.
+
 ![V-Carve Mode](ScreenShots/V-Carve.png)
 
 ---
