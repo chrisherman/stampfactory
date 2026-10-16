@@ -24,8 +24,8 @@
         1.0
     ],
     "viewport_center": [
-        15.813411078717202,
-        -6.857142857142858
+        18.962099125364432,
+        6.50728862973761
     ],
     "cam": {
         "cam_cutter_dia": 0.5,
@@ -33,7 +33,7 @@
         "cam_feed_cut": 500.0,
         "cam_feed_plunge": 100.0,
         "cam_step_depth": 0.4,
-        "cam_overstep": 0.3,
+        "cam_overstep": 0.4,
         "cam_depth_cut": 3.0,
         "cam_depth_engrave": 0.8,
         "cam_safe_z": 5.0,

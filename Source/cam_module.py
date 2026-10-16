@@ -7,7 +7,7 @@ Includes advanced 2.5D Two-Tool V-Carving logic for preserving fragile topologic
 
 import math
 import os
-from PyQt6.QtWidgets import (QWidget, QHBoxLayout, QVBoxLayout, QFormLayout, 
+from PyQt6.QtWidgets import (QWidget, QHBoxLayout, QVBoxLayout, QGridLayout, 
                              QGroupBox, QLineEdit, QPushButton, QFileDialog, 
                              QDoubleSpinBox, QCheckBox, QLabel, QStackedWidget)
 from PyQt6.QtCore import pyqtSignal, Qt
@@ -336,7 +336,8 @@ class CAMUIWidget(QGroupBox):
         self.filename_cb = filename_cb
         self.status_cb = status_cb
         
-        layout = QFormLayout(self)
+        # NUKE QFormLayout. We demand absolute grid alignment.
+        layout = QGridLayout(self)
         
         self.cam_cutter_dia = create_cam_spinbox(DEF_CUTTER_DIA, 0.1, 50.0, 0.1)
         self.cam_feed_rapid = create_cam_spinbox(DEF_FEED_RAPID, 10.0, 10000.0, 100.0)
@@ -354,24 +355,39 @@ class CAMUIWidget(QGroupBox):
         self.cam_v_angle = create_cam_spinbox(DEF_V_ANGLE, 10.0, 180.0, 5.0)
         self.cam_v_tip = create_cam_spinbox(DEF_V_TIP, 0.0, 10.0, 0.1)
 
-        def hbox(w1, w2):
-            h = QHBoxLayout()
-            h.addWidget(w1)
-            h.addWidget(w2)
-            h.setContentsMargins(0, 0, 0, 0)
-            c = QWidget()
-            c.setLayout(h)
-            return c
+        # Row 0
+        layout.addWidget(QLabel("Flat Cutter Dia (mm):"), 0, 0)
+        layout.addWidget(self.cam_cutter_dia, 0, 1, 1, 2) # Span across both parameter columns
 
-        layout.addRow("Flat Cutter Dia (mm):", self.cam_cutter_dia)
-        layout.addRow("Feed Rapid/Cut:", hbox(self.cam_feed_rapid, self.cam_feed_cut))
-        layout.addRow("Safe Z / Plunge:", hbox(self.cam_safe_z, self.cam_feed_plunge))
-        layout.addRow("Depth Step/Over:", hbox(self.cam_step_depth, self.cam_overstep))
-        layout.addRow("Total Cut/Engrave:", hbox(self.cam_depth_cut, self.cam_depth_engrave))
-        layout.addRow("Prologue/Epilogue:", hbox(self.cam_prologue, self.cam_epilogue))
+        # Row 1
+        layout.addWidget(QLabel("Feed Rapid/Cut:"), 1, 0)
+        layout.addWidget(self.cam_feed_rapid, 1, 1)
+        layout.addWidget(self.cam_feed_cut, 1, 2)
+
+        # Row 2
+        layout.addWidget(QLabel("Safe Z / Plunge:"), 2, 0)
+        layout.addWidget(self.cam_safe_z, 2, 1)
+        layout.addWidget(self.cam_feed_plunge, 2, 2)
+
+        # Row 3
+        layout.addWidget(QLabel("Depth Step/Over:"), 3, 0)
+        layout.addWidget(self.cam_step_depth, 3, 1)
+        layout.addWidget(self.cam_overstep, 3, 2)
+
+        # Row 4
+        layout.addWidget(QLabel("Total Cut/Engrave:"), 4, 0)
+        layout.addWidget(self.cam_depth_cut, 4, 1)
+        layout.addWidget(self.cam_depth_engrave, 4, 2)
+
+        # Row 5
+        layout.addWidget(QLabel("Prologue/Epilogue:"), 5, 0)
+        layout.addWidget(self.cam_prologue, 5, 1)
+        layout.addWidget(self.cam_epilogue, 5, 2)
         
-        layout.addRow("", self.cam_use_v_bit)
+        # Row 6
+        layout.addWidget(self.cam_use_v_bit, 6, 1, 1, 2)
         
+        # V-Carve Params Widget (Row 7)
         self.v_params_widget = QWidget()
         v_layout = QHBoxLayout(self.v_params_widget)
         v_layout.setContentsMargins(0, 0, 0, 0)
@@ -379,8 +395,9 @@ class CAMUIWidget(QGroupBox):
         v_layout.addWidget(self.cam_v_angle)
         v_layout.addWidget(QLabel("Tip Dia (mm):"))
         v_layout.addWidget(self.cam_v_tip)
-        layout.addRow(self.v_params_widget)
+        layout.addWidget(self.v_params_widget, 7, 0, 1, 3)
         
+        # Buttons (Rows 8, 9, 10)
         self.btn_export_eng = QPushButton(UI_BTN_ENGRAVE)
         self.btn_export_pock = QPushButton(UI_BTN_POCKET)
         self.btn_export_eng.setStyleSheet(f"background-color: {COLOR_BTN_ENGRAVE}; color: white;")
@@ -391,15 +408,26 @@ class CAMUIWidget(QGroupBox):
         self.btn_export_v_rough.setStyleSheet(f"background-color: {COLOR_BTN_POCKET}; color: white;")
         self.btn_export_v_finish.setStyleSheet(f"background-color: {COLOR_BTN_V}; color: white;")
         
-        self.standard_btn_widget = hbox(self.btn_export_eng, self.btn_export_pock)
-        self.v_btn_widget = hbox(self.btn_export_v_rough, self.btn_export_v_finish)
+        # Standard Buttons Layout
+        self.standard_btn_widget = QWidget()
+        std_btn_layout = QHBoxLayout(self.standard_btn_widget)
+        std_btn_layout.setContentsMargins(0, 0, 0, 0)
+        std_btn_layout.addWidget(self.btn_export_eng)
+        std_btn_layout.addWidget(self.btn_export_pock)
         
-        layout.addRow(self.standard_btn_widget)
-        layout.addRow(self.v_btn_widget)
+        # V-Carve Buttons Layout
+        self.v_btn_widget = QWidget()
+        v_btn_layout = QHBoxLayout(self.v_btn_widget)
+        v_btn_layout.setContentsMargins(0, 0, 0, 0)
+        v_btn_layout.addWidget(self.btn_export_v_rough)
+        v_btn_layout.addWidget(self.btn_export_v_finish)
+        
+        layout.addWidget(self.standard_btn_widget, 8, 0, 1, 3)
+        layout.addWidget(self.v_btn_widget, 9, 0, 1, 3)
         
         self.btn_export_out = QPushButton(UI_BTN_OUTSIDE)
         self.btn_export_out.setStyleSheet(f"background-color: {COLOR_BTN_OUTSIDE}; color: white;")
-        layout.addRow(self.btn_export_out)
+        layout.addWidget(self.btn_export_out, 10, 0, 1, 3)
 
         # Wire Signals
         self.cam_use_v_bit.toggled.connect(self._toggle_v_mode)
