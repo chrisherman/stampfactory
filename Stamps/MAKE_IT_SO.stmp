@@ -2,30 +2,30 @@
     "text": "MAKE IT SO!",
     "width": 38.0,
     "height": 13.0,
-    "margin_left": 0.5,
-    "margin_right": 0.5,
-    "margin_top": 1.0,
-    "margin_bottom": 1.0,
-    "abs_x": 10.0,
-    "abs_y": 10.0,
+    "margin_left": 0.0,
+    "margin_right": 0.0,
+    "margin_top": 0.0,
+    "margin_bottom": 0.0,
+    "abs_x": 0.0,
+    "abs_y": 0.0,
     "font_family": "Arial Black",
     "font_style": "Bold",
     "alignment": "Center",
     "mirror": true,
     "viewport_transform": [
-        14.583333333333334,
+        14.291666666666666,
         0.0,
         0.0,
         0.0,
-        -14.583333333333334,
+        -14.291666666666666,
         0.0,
         0.0,
         0.0,
         1.0
     ],
     "viewport_center": [
-        14.94857142857143,
-        25.57714285714286
+        18.962099125364432,
+        6.50728862973761
     ],
     "cam": {
         "cam_cutter_dia": 0.5,
@@ -38,7 +38,7 @@
         "cam_depth_engrave": 1.0,
         "cam_prologue": "M3",
         "cam_epilogue": "M5",
-        "cam_use_v_bit": true,
+        "cam_use_v_bit": false,
         "cam_v_angle": 30.0,
         "cam_v_tip_dia": 0.1
     }

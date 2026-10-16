@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env ../.sfenv/bin/python
 """
 The "Highly Critical Business" CNC Text Carver - Adult Edition.
 Version: 1.2.6
