@@ -24,22 +24,23 @@
         1.0
     ],
     "viewport_center": [
-        18.962099125364432,
-        6.50728862973761
+        15.813411078717202,
+        -6.857142857142858
     ],
     "cam": {
         "cam_cutter_dia": 0.5,
         "cam_feed_rapid": 1000.0,
         "cam_feed_cut": 500.0,
         "cam_feed_plunge": 100.0,
-        "cam_step_depth": 0.2,
-        "cam_overstep": 0.2,
+        "cam_step_depth": 0.4,
+        "cam_overstep": 0.3,
         "cam_depth_cut": 3.0,
-        "cam_depth_engrave": 1.0,
+        "cam_depth_engrave": 0.8,
+        "cam_safe_z": 5.0,
         "cam_prologue": "M3",
         "cam_epilogue": "M5",
         "cam_use_v_bit": false,
-        "cam_v_angle": 30.0,
+        "cam_v_angle": 60.0,
         "cam_v_tip_dia": 0.1
     }
 }
